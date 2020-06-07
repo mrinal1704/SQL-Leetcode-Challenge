@@ -1,3 +1,4 @@
+-- Question 1
 -- Table: Users
 
 -- +---------------+---------+
@@ -25,7 +26,8 @@
 
 -- Write an SQL query to report the distance travelled by each user.
 
--- Return the result table ordered by travelled_distance in descending order, if two or more users travelled the same distance, order them by their name in ascending order.
+-- Return the result table ordered by travelled_distance in descending order, 
+-- if two or more users travelled the same distance, order them by their name in ascending order.
 
 -- The query result format is in the following example.
 
