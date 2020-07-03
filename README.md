@@ -1,4 +1,4 @@
-# SQL-Leetcode-Challenge (In progress, 117/117 done so far)
+# SQL-Leetcode-Challenge 
 
 ## Motivation
 This repo contains all my SQL solutions from Leetcode website in order to practice my SQL programming skills. It is still in progress
