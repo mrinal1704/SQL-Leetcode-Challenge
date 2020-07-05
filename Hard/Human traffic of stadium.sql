@@ -30,17 +30,22 @@
 -- Each day only have one row record, and the dates are increasing with id increasing.
 
 -- Solution
-select a.id, a.visit_date, a.people
-from
-(select id, visit_date, people, id - row_number() over(order by visit_date) as dates
-from stadium
-where people>=100) a
-left join
-(select b.dates, count(*) as total
-from
-(select id, visit_date, people, id - row_number() over(order by visit_date) as dates
-from stadium
-where people>=100) b
-group by dates) c
-on a.dates = c.dates
-where c.total>2
+WITH t1 AS (
+            SELECT id, 
+                   visit_date,
+                   people,
+                   id - ROW_NUMBER() OVER(ORDER BY visit_date) AS dates
+              FROM stadium
+            WHERE people >= 100) 
+            
+SELECT t1.id, 
+       t1.visit_date,
+       t1people
+FROM t1
+LEFT JOIN (
+            SELECT dates, 
+                   COUNT(*) as total
+              FROM t1
+            GROUP BY dates) AS b
+USING (dates)
+WHERE b.total > 2
