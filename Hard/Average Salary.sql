@@ -1,5 +1,6 @@
 -- Question 108
--- Given two tables as below, write a query to display the comparison result (higher/lower/same) of the average salary of employees in a department to the company's average salary.
+-- Given two tables as below, write a query to display the comparison result (higher/lower/same) of the 
+-- average salary of employees in a department to the company's average salary.
  
 
 -- Table: salary
