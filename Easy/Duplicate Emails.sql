@@ -19,8 +19,6 @@
 
 -- Solution
 Select Email
-from
-(Select Email, count(Email)
 from person
 group by Email
-having count(Email)>1) a
+having count(Email)>1
