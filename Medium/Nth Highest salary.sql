@@ -29,3 +29,19 @@ BEGIN
       where a.rk = N
   );
 END
+
+  
+## Approach 2: Use of Limit and Offset
+
+Create Function getNthHighestSalary(N INT) Returns INT
+Begin
+  
+  Set N = N-1;
+  Return
+    
+    Select distinct salary
+    From Employee
+    Order By salary Desc
+    Limit 1 Offset N
+    
+End;
