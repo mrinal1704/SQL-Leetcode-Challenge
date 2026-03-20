@@ -22,6 +22,26 @@
 -- The seat_id is an auto increment int, and free is bool ('1' means free, and '0' means occupied.).
 -- Consecutive available seats are more than 2(inclusive) seats consecutively available.
 
+--My Solution
+//METHOD 1
+SELECT DISTINCT c1.seat_id
+FROM cinema c1
+JOIN cinema c2 ON ABS(c1.seat_id - c2.seat_id) = 1
+Where c1.free = 1 AND c2.free = 1
+
+//METHOD 2
+SELECT c1.seat_id
+ FROM cinema c1
+ JOIN cinema c2 on c1.seat_id = c2.seat_id - 1
+ where c1.free = 1 AND c2.free = 1
+ 
+UNION
+ 
+SELECT c2.seat_id
+ FROM cinema c1
+ JOIN cinema c2 on  c1.seat_id = c2.seat_id + 1
+ where c1.free = 1 AND c2.free = 1
+
 -- Solution
 Select seat_id
 from(
