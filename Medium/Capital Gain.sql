@@ -66,3 +66,12 @@ where operation = 'Buy'
 group by stock_name) c
 on b.stock_name = c.name)
 order by capital_gain_loss desc
+
+-- Proposed Solution
+
+select 	stock_name,
+		SUM(case when operation = 'sell' then +price else -price end) as capital_gain_loss
+        
+from stocks
+
+group by stock_name
